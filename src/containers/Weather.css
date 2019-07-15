@@ -1,3 +1,10 @@
-h1{
-    text-align:center;
+h1 {
+  text-align: center;
+}
+.Weather {
+  margin: auto;
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  justify-content: center;
 }
