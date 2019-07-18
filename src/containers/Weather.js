@@ -9,7 +9,6 @@ class Weather extends Component {
   };
 
   componentDidMount() {
-    this.setState({ loading: true });
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
         axios
@@ -21,28 +20,29 @@ class Weather extends Component {
               "&lang=pl&units=metric&appid=c87d61644e288c13a5977020a0c39ad4"
           )
           .then(response => {
-            this.setState({ weather: response, loading: false });
+            this.setState({ weather: response.data });
           })
           .catch(error => {
-            this.setState({ error: true, loading: false });
+            this.setState({ error: true });
           });
       });
     }
   }
 
   render() {
-    const dateTransformation = unformattedDate => {
-      let date = new Date(unformattedDate);
-      date = date.toLocaleString();
+    const dateTransformation = () => {
+      let date = new Date();
+      date = date.toLocaleString("pl-PL", {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric"
+      });
       return date;
     };
 
     let weatherItem = <p>Something went wrong</p>;
     console.log(this.state);
-
-    // if(this.state.loading){
-
-    // }
 
     if (this.state.weather == null) {
       return true;
@@ -51,11 +51,19 @@ class Weather extends Component {
     if (!this.state.error) {
       weatherItem = (
         <Day
-          key={this.state.weather.data.id}
-          date={dateTransformation(this.state.weather.data.dt)}
-          temp={this.state.weather.data.main.temp}
-          description={this.state.weather.data.weather[0].description}
-          icon={this.state.weather.data.weather[0].icon}
+          key={this.state.weather.id}
+          date={dateTransformation()}
+          temp={this.state.weather.main.temp}
+          description={this.state.weather.weather[0].description}
+          icon={this.state.weather.weather[0].icon}
+          name={this.state.weather.name}
+          humidity={this.state.weather.main.humidity}
+          pressure={this.state.weather.main.pressure}
+          windSpeed={this.state.weather.wind.speed}
+          clouds={this.state.weather.clouds.all}
+          rain={this.state.weather.rain["3h"]}
+          temp_max={this.state.weather.main.temp_max}
+          temp_min={this.state.weather.main.temp_min}
         />
       );
     }

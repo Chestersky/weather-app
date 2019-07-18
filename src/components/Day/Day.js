@@ -11,11 +11,33 @@ const day = props => {
 
   return (
     <article className="Post">
-      <h3>{props.date}</h3>
-      <h1>{Math.round(props.temp)} &#176;C</h1>
-      <div className="Description">
-        {props.description}
-        {icon}
+      <div className="LocationName">{props.name}</div>
+      <div>{props.date}</div>
+      <div className="WeatherDetails">
+        <div className="Temp">
+          {icon}
+          {Math.round(props.temp)}&#176;C
+          <div className="Description">{props.description}</div>
+        </div>
+        <div className="Weather-description-1">
+          <div>
+            <strong>wilgotność</strong>: {props.humidity}%
+          </div>
+          <div>
+            <strong>ciśnienie:</strong> {props.pressure} hPa
+          </div>
+          <div>
+            <strong>prędkość wiatru:</strong> {props.windSpeed} m/s
+          </div>
+        </div>
+        <div className="Weather-description-2">
+          <div>
+            <strong>zachmurzenie:</strong> {props.clouds}%
+          </div>
+          <div>
+            <strong>deszcz:</strong> {props.rain} mm
+          </div>
+        </div>
       </div>
     </article>
   );
