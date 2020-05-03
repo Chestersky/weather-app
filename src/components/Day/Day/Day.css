@@ -1,22 +1,22 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 .Post {
-  width: 60%;
+  width: 50%;
   padding: 16px;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
-  margin: 10px;
+  margin: 20px;
   background-color: whitesmoke;
   height: auto;
   font-family: "Roboto", sans-serif;
 }
 
-.LocationName {
-  font-size: 2em;
+.LocationInfo {
+  text-align: center;
 }
 
 .WeatherDetails {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 16px;
 }
@@ -24,8 +24,7 @@
   font-size: 3em;
   line-height: 1.7;
 }
-.Weather-description-1,
-.Weather-description-2 {
+.Weather-description-1 {
   display: flex;
   flex-direction: column;
   line-height: 1.7;

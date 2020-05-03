@@ -1,28 +1,31 @@
 import React, { Component } from "react";
-import Day from "../components/Day/Day";
+import Day from "../../components/Day/Day/Day";
 import "./Weather.css";
 import axios from "axios";
 
 class Weather extends Component {
-  state = {
-    weather: null
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      weather: null,
+    };
+  }
 
   componentDidMount() {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
+      navigator.geolocation.getCurrentPosition((position) => {
         axios
           .get(
-            "http://api.openweathermap.org/data/2.5/weather?lat=" +
+            "https://api.openweathermap.org/data/2.5/weather?lat=" +
               +position.coords.latitude +
               "&lon=" +
               +position.coords.longitude +
               "&lang=pl&units=metric&appid=c87d61644e288c13a5977020a0c39ad4"
           )
-          .then(response => {
+          .then((response) => {
             this.setState({ weather: response.data });
           })
-          .catch(error => {
+          .catch((error) => {
             this.setState({ error: true });
           });
       });
@@ -36,7 +39,7 @@ class Weather extends Component {
         weekday: "long",
         year: "numeric",
         month: "long",
-        day: "numeric"
+        day: "numeric",
       });
       return date;
     };
@@ -61,7 +64,6 @@ class Weather extends Component {
           pressure={this.state.weather.main.pressure}
           windSpeed={this.state.weather.wind.speed}
           clouds={this.state.weather.clouds.all}
-          rain={this.state.weather.rain["3h"]}
           temp_max={this.state.weather.main.temp_max}
           temp_min={this.state.weather.main.temp_min}
         />

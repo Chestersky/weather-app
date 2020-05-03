@@ -1,15 +1,8 @@
 import React from "react";
 import "./Day.css";
-import "../../weather-icons/css/weather-icons.css";
+import "../../../weather-icons/css/weather-icons.css";
 
-const day = props => {
-  // let icon = (
-  //   // <img
-  //   //   src={"http://openweathermap.org/img/w/" + props.icon + ".png"}
-  //   //   alt="cos"
-  //   // />
-  //   <i className={"wi wi-owm-" + props.icon} />
-  // );
+const day = (props) => {
   const icons = {
     "01d": "wi-day-sunny",
     "02d": "wi-day-cloudy",
@@ -28,13 +21,14 @@ const day = props => {
     "10n": "wi-night-rain",
     "11n": "wi-night-thunderstorm",
     "13n": "wi-night-snow",
-    "50n": "wi-night-fog"
+    "50n": "wi-night-fog",
   };
 
   return (
     <article className="Post">
-      <div className="LocationName">{props.name}</div>
-      <div>{props.date}</div>
+      <div className="LocationInfo">
+        <h1>{props.name}</h1> <span>{props.date}</span>
+      </div>
       <div className="WeatherDetails">
         <div className="Temp">
           <i className={"wi " + icons[props.icon]} />
@@ -55,15 +49,9 @@ const day = props => {
             <i className="wi wi-strong-wind" />
             <strong>prędkość wiatru:</strong> {props.windSpeed} m/s
           </div>
-        </div>
-        <div className="Weather-description-2">
           <div>
             <i className="wi wi-cloud" />
             <strong>zachmurzenie:</strong> {props.clouds}%
-          </div>
-          <div>
-            <i className="wi wi-raindrop" />
-            <strong>deszcz:</strong> {props.rain} mm
           </div>
         </div>
       </div>
