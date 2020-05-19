@@ -1,6 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
 .Post {
-  width: 50%;
+  width: 60%;
   padding: 16px;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
@@ -35,4 +34,12 @@
 }
 i {
   padding-right: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  .WeatherDetails {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
 }
