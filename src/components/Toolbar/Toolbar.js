@@ -1,27 +1,31 @@
 import React from "react";
-import { LinkContainer } from "react-router-bootstrap";
-// import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
+import "./Toolbar.css";
 
 const toolbar = () => {
   return (
-    <Navbar expand="lg">
-      <LinkContainer to="/">
-        <Navbar.Brand>WeatherAPP</Navbar.Brand>
-      </LinkContainer>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav>
-          <LinkContainer to="/">
-            <Nav.Link>Aktualna pogoda</Nav.Link>
-          </LinkContainer>
-          <LinkContainer to="/fiveday">
-            <Nav.Link>Pogoda długoterminowa</Nav.Link>
-          </LinkContainer>
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+    <nav>
+      <div className="logo">
+        <h3>WeatherAPP</h3>
+      </div>
+      <ul className="nav-links">
+        <li>
+          <Link className="nav-link" to="/">
+            aktualna pogoda
+          </Link>
+        </li>
+        <li>
+          <Link className="nav-link" to="/fiveday">
+            pogoda szczegółowa
+          </Link>
+        </li>
+      </ul>
+      <div className="burger">
+        <div className="1"></div>
+        <div className="2"></div>
+        <div className="3"></div>
+      </div>
+    </nav>
   );
 };
 
