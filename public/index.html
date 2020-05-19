@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -24,7 +25,7 @@
     -->
     <title>React App</title>
   </head>
-  <body>
+  <body onload="navAnimation()">
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
@@ -37,5 +38,26 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+    <script>
+      const navAnimation = () => {
+        const nav = document.querySelector(".nav-links");
+        const burger = document.querySelector(".burger");
+        const navLinks = document.querySelectorAll(".nav-links li");
+
+        burger.addEventListener("click", () => {
+          nav.classList.toggle("nav-active");
+
+          navLinks.forEach((link, index) => {
+            if (link.style.animation) {
+              link.style.animation = "";
+            } else {
+              link.style.animation = `navLinkFade 0.5s ease forwards ${
+                index / 7 + 1.5
+              }s`;
+            }
+          });
+        });
+      };
+    </script>
   </body>
 </html>
