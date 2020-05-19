@@ -1,0 +1,11 @@
+.column {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.temp {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.25rem;
+}
