@@ -69,7 +69,7 @@ class Weather extends Component {
         />
       );
     }
-    return <selection className="Weather">{weatherItem}</selection>;
+    return <div className="Weather">{weatherItem}</div>;
   }
 }
 
