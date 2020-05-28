@@ -1,6 +1,7 @@
 #page-container {
   margin: auto;
-  width: 80%;
+  width: 70%;
+  margin-top: 5vh;
   padding-top: 5vh;
   padding-bottom: 10vh;
   display: flex;
