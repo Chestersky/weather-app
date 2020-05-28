@@ -7,9 +7,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: #eee;
-  box-shadow: 0 2px 3px #ccc;
-  border: 1px solid #eee;
 }
 #day-container {
   display: flex;

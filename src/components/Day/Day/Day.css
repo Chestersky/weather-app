@@ -1,9 +1,8 @@
 .Post {
   margin-top: 5vh;
+  padding-top: 5vh;
+  padding-bottom: 10vh;
   width: 60%;
-  border: 1px solid #eee;
-  box-shadow: 0 2px 3px #ccc;
-  background-color: whitesmoke;
   height: auto;
   font-family: "Roboto", sans-serif;
 }
