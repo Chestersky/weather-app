@@ -11,3 +11,7 @@
   justify-content: space-around;
   font-size: 1.25rem;
 }
+.icon i {
+  font-size: 2em;
+  line-height: 1.7;
+}

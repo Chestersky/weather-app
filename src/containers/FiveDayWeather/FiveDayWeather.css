@@ -11,7 +11,6 @@
   border: 1px solid #eee;
 }
 #day-container {
-  font-family: "Roboto", sans-serif;
   display: flex;
   flex-wrap: wrap;
 }
