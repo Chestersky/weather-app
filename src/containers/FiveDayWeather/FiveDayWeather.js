@@ -62,7 +62,7 @@ class FiveDayWeather extends Component {
       axios
         .get(
           "https://dataservice.accuweather.com/locations/v1/cities/geoposition/search?apikey=" +
-            process.env.REACT_APP_API_KEY +
+            getAuth() +
             "&q=" +
             position.coords.latitude +
             "%2C" +
@@ -79,6 +79,10 @@ class FiveDayWeather extends Component {
         .catch(function (error) {
           alert("79 Wystąpił błąd\n" + error);
         });
+    };
+    getAuth = () => {
+      const key = process.env.GITHUB_DEVELOPER_KEY;
+      return key;
     };
 
     const getWeatherForecast = (locationid) => {
