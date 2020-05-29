@@ -8,7 +8,7 @@
 }
 .temp {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   font-size: 1.25rem;
 }
 .icon i {

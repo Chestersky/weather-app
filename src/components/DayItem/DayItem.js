@@ -13,9 +13,13 @@ const dayitem = (props) => {
         <p className="lead">{props.data.Day.IconPhrase}</p>
       </div>
       <div className="temp">
-        <p>{Math.round(props.data.Temperature.Maximum.Value)}&#8451;</p>
+        <p>
+          {Math.round(props.data.Temperature.Maximum.Value)}
+          <sup>&#8451;</sup>
+        </p>
         <p id="temp-night">
-          {Math.round(props.data.Temperature.Minimum.Value)}&#8451;
+          {Math.round(props.data.Temperature.Minimum.Value)}
+          <sup>&#8451;</sup>
         </p>
       </div>
     </div>
